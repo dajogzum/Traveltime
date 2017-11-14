@@ -10,7 +10,12 @@ git clone https://github.com/dajogzum/Traveltime
 cd ../modules/traveltime
 git pull
 ```
-
+### Aktualizacja jeśli były zmieniane pliki lokalnie<br>
+```
+cd ../modules/alertsnstats
+git reset --hard
+git pull
+```
 ## Config
 ```
 {
