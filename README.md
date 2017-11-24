@@ -7,19 +7,19 @@ git clone https://github.com/dajogzum/Traveltime
 
 ## Aktualizacja
 ```
-cd ../modules/traveltime
+cd ../modules/Traveltime
 git pull
 ```
 ### Aktualizacja jeśli były zmieniane pliki lokalnie<br>
 ```
-cd ../modules/alertsnstats
+cd ../modules/Traveltime
 git reset --hard
 git pull
 ```
 ## Config
 ```
 {
-  module: "traveltime",
+  module: "Traveltime",
   position: "top_left",
 },
 ```
