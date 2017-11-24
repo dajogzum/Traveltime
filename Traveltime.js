@@ -1,4 +1,4 @@
-Module.register("traveltime",{
+Module.register("Traveltime",{
 
 	defaults: {
 	},
