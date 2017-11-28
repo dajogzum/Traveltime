@@ -17,7 +17,7 @@ Module.register("Traveltime",{
 		wrapper.id = "traveltime";
 		return wrapper;
 	},
-//testowanie
+
 	updater: function() {
 		var url = "https://maps.googleapis.com/maps/api/directions/json?origin=ryzowa%2049&destination=Smolenska%2087&departure_time=now&waypoints=via:52.215906%2020.960237|via:52.278655%2021.011689&language=pl&traffic_model=best_guess&key=%20AIzaSyA-j7teJoJlXDNDLfUGHbpUkfddAL39fcE"
 		var readytime, valueInTraff, valueWoTraff, jam;
@@ -41,7 +41,7 @@ Module.register("Traveltime",{
 							document.getElementById("traveltime").innerHTML = "Szacowany czas przejazdu: <span style='color:red'>"+readytime+"</span></br>Opóźnienie: "+jam+" min";
 							console.log("JAM: "+jam);
 							}else{
-							document.getElementById("traveltime").innerHTML = "Szacowany czas przejazdu: "+readytime;
+							document.getElementById("traveltime").innerHTML = "Szacowany czas przejazdu: <span class="bright">"+readytime+"</span>";
 							console.log("JAM: "+jam);
 							}
    						}
