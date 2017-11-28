@@ -14,12 +14,14 @@ git pull
 ```
 cd ../modules/Traveltime
 git reset --hard
+git clean -df
 git pull
 ```
 ## Config
 ```
 {
-  module: "Traveltime",
+  module: "Traveltime"
+Travelti,
   position: "top_left",
 },
 ```
