@@ -41,7 +41,7 @@ Module.register("Traveltime",{
 							document.getElementById("traveltime").innerHTML = "Szacowany czas przejazdu: <span style='color:red'>"+readytime+"</span></br>Opóźnienie: "+jam+" min";
 							console.log("JAM: "+jam);
 							}else{
-							document.getElementById("traveltime").innerHTML = "Szacowany czas przejazdu: <span class="bright">"+readytime+"</span>";
+							document.getElementById("traveltime").innerHTML = "Szacowany czas przejazdu: <span class='bright'>"+readytime+"</span>";
 							console.log("JAM: "+jam);
 							}
    						}
