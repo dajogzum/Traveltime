@@ -16,9 +16,10 @@ Module.register("Traveltime",{
 	getDom: function() {
 		self = this;
 		var wrapper = document.createElement("div");
+		var textNode = document.createTextNode("Wczytywanie trasy i ruchu...")
 		wrapper.id = "traveltime-"+this.config.id;
 		wrapper.className = "traveltime";
-		document.getElementById("traveltime-"+self.config.id).innerHTML = "Wczytywanie trasy i ruchu...";
+		wrapper.appendChild(textNode);
 		return wrapper;
 	},
 
