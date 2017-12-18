@@ -1,6 +1,7 @@
 Module.register("Traveltime",{
 
 	defaults: {
+		link: "https://maps.googleapis.com/maps/api/directions/json?origin=75+9th+Ave+New+York,+NY&destination=MetLife+Stadium+1+MetLife+Stadium+Dr+East+Rutherford,+NJ+07073&key=AIzaSyA-j7teJoJlXDNDLfUGHbpUkfddAL39fcE"
 	},
 
 	start: function() {
@@ -19,7 +20,7 @@ Module.register("Traveltime",{
 	},
 
 	updater: function() {
-		var url = "https://maps.googleapis.com/maps/api/directions/json?origin=ryzowa%2049&destination=Smolenska%2087&departure_time=now&waypoints=via:52.215906%2020.960237|via:52.278655%2021.011689&language=pl&traffic_model=best_guess&key=%20AIzaSyA-j7teJoJlXDNDLfUGHbpUkfddAL39fcE"
+		var url = this.config.link;
 		var readytime, valueInTraff, valueWoTraff, jam;
 		setInterval(function () {
   			var xhttp = new XMLHttpRequest();
