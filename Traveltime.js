@@ -18,6 +18,7 @@ Module.register("Traveltime",{
 		var wrapper = document.createElement("div");
 		wrapper.id = "traveltime-"+this.config.id;
 		wrapper.className = "traveltime";
+		document.getElementById("traveltime-"+self.config.id).innerHTML = "Wczytywanie trasy i ruchu...";
 		return wrapper;
 	},
 
@@ -30,7 +31,6 @@ Module.register("Traveltime",{
  			xhttp.open("get", url, true);
   			xhttp.send();
   			xhttp.onreadystatechange = function() {
-    			if (this.readyState == 4) {
     				 if (this.readyState == 4) {
    					readytime = JSON.parse(this.response).routes[0].legs[0].duration_in_traffic.text;
 					valueInTraff = JSON.parse(this.response).routes[0].legs[0].duration_in_traffic.value;
@@ -38,19 +38,20 @@ Module.register("Traveltime",{
 					valueInTraff = Math.round(valueInTraff/60);
 					valueWoTraff = Math.round(valueWoTraff/60);
 					jam = valueInTraff - valueWoTraff;
-						if(jam>5 && jam<=12){
-							document.getElementById("traveltime-"+self.config.id).innerHTML = "Szacowany czas przejazdu: <span style='color:orange'>"+readytime+"</span></br>Opóźnienie: "+jam+" min";
-							console.log("JAM: "+jam);
-							}else if(jam>12){
-							document.getElementById("traveltime-"+self.config.id).innerHTML = "Szacowany czas przejazdu: <span style='color:red'>"+readytime+"</span></br>Opóźnienie: "+jam+" min";
-							console.log("JAM: "+jam);
-							}else{
-							document.getElementById("traveltime-"+self.config.id).innerHTML = "Szacowany czas przejazdu: <span class='bright'>"+readytime+"</span>";
-							console.log("JAM: "+jam);
-							}
-   						}
-    			}
-    		}
-    	}, 60*1000);
+					if(jam>5 && jam<=12){
+						document.getElementById("traveltime-"+self.config.id).innerHTML = "Szacowany czas przejazdu: <span style='color:orange'>"+readytime+"</span></br>Opóźnienie: "+jam+" min";
+						console.log("JAM: "+jam);
+						}else if(jam>12){
+						document.getElementById("traveltime-"+self.config.id).innerHTML = "Szacowany czas przejazdu: <span style='color:red'>"+readytime+"</span></br>Opóźnienie: "+jam+" min";
+						console.log("JAM: "+jam);
+						}else{
+						document.getElementById("traveltime-"+self.config.id).innerHTML = "Szacowany czas przejazdu: <span class='bright'>"+readytime+"</span>";
+						console.log("JAM: "+jam);
+						}
+   					}else{
+						document.getElementById("traveltime-"+self.config.id).innerHTML = "Błąd pobierania danych :(";
+					}
+    				}
+    		}, 60*1000);
 	},
 });
