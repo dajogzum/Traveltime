@@ -20,8 +20,11 @@ git pull
 ## Config
 ```
 {
-  module: "Traveltime"
-Travelti,
+  module: "Traveltime",
   position: "top_left",
+  config: {
+    link: "Google api directoins"
+  }
 },
 ```
+https://developers.google.com/maps/documentation/directions/
