@@ -23,7 +23,8 @@ git pull
   module: "Traveltime",
   position: "top_left",
   config: {
-    link: "Google api directions"
+    link: "Google api directions",
+    id: "unique id",
   }
 },
 ```
